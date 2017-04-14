@@ -13,12 +13,17 @@
 /turf/space/CanZPass(atom, direction)
 	return 1
 
+//
+// Open Space - "empty" turf that lets stuff fall thru it to the layer below
+//
+
 /turf/simulated/open
 	name = "open space"
 	icon = 'icons/turf/space.dmi'
 	icon_state = ""
 	layer = 0
 	density = 0
+	plane = OPENSPACE_PLANE
 	pathweight = 100000 //Seriously, don't try and path over this one numbnuts
 
 	var/turf/below
@@ -33,15 +38,17 @@
 	update()
 
 /turf/simulated/open/Entered(var/atom/movable/mover)
-	..()
+	. = ..()
 	mover.fall()
+
+// Called when thrown object lands on this turf.
+/turf/simulated/open/hitby(var/atom/movable/AM)
+	. = ..()
+	AM.fall()
 
 /turf/simulated/open/proc/update()
 	below = GetBelow(src)
 	turf_changed_event.register(below, src, /turf/simulated/open/update_icon)
-	var/turf/simulated/T = get_step(src,NORTH)
-	if(T)
-		turf_changed_event.register(T, src, /turf/simulated/open/update_icon)
 	levelupdate()
 	for(var/atom/movable/A in src)
 		A.fall()
@@ -52,27 +59,39 @@
 	for(var/obj/O in src)
 		O.hide(0)
 
+/**
+* Update icon and overlays of open space to be that of the turf below, plus any visible objects on that turf.
+*/
 /turf/simulated/open/update_icon()
+	overlays.Cut()
+	var/turf/below = GetBelow(src)
 	if(below)
-		underlays = list(image(icon = below.icon, icon_state = below.icon_state))
-		underlays += below.overlays.Copy()
+		icon = below.icon
+		icon_state = below.icon_state
+		dir = below.dir
+		color = below.color
+		overlays += below.overlays
 
-	var/list/noverlays = list()
-	if(!istype(below,/turf/space))
-		noverlays += image(icon =icon, icon_state = "empty", layer = 2.2)
+		if(!istype(below, /turf/simulated/open))
+			// get objects (not mobs, they are handled by /obj/zshadow)
+			var/image/o_img = list()
+			for(var/obj/O in below)
+				if(O.invisibility) continue // Ignore objects that have any form of invisibility
+				if(O.loc != below) continue // Ignore multi-turf objects not directly below
+				var/image/temp2 = image(O, dir = O.dir, layer = O.layer)
+				temp2.plane = src.plane
+				temp2.color = O.color
+				temp2.overlays += O.overlays
+				// TODO Is pixelx/y needed?
+				o_img += temp2
+			overlays += o_img
 
-	var/turf/simulated/T = get_step(src,NORTH)
-	if(istype(T) && !istype(T,/turf/simulated/open))
-		noverlays += image(icon ='icons/turf/cliff.dmi', icon_state = "metal", layer = 2.2)
-
-	var/obj/structure/stairs/S = locate() in below
-	if(S && S.loc == below)
-		var/image/I = image(icon = S.icon, icon_state = "below", dir = S.dir, layer = 2.2)
-		I.pixel_x = S.pixel_x
-		I.pixel_y = S.pixel_y
-		noverlays += I
-
-	overlays = noverlays
+		var/image/over_OS_darkness = image('icons/turf/floors.dmi', "black_open")
+		over_OS_darkness.plane = OVER_OPENSPACE_PLANE
+		over_OS_darkness.layer = MOB_LAYER
+		overlays += over_OS_darkness
+		return 0
+	return PROCESS_KILL
 
 // Straight copy from space.
 /turf/simulated/open/attackby(obj/item/C as obj, mob/user as mob)
@@ -110,4 +129,8 @@
 
 //Most things use is_plating to test if there is a cover tile on top (like regular floors)
 /turf/simulated/open/is_plating()
-	return 1
+	return TRUE
+
+/turf/simulated/open/is_space()
+	var/turf/below = GetBelow(src)
+	return !below || below.is_space()

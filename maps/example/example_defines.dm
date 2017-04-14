@@ -1,5 +1,6 @@
 #define Z_LEVEL_FIRST_EXAMPLE					1
 #define Z_LEVEL_SECOND_EXAMPLE					2
+#define Z_LEVEL_THIRD_EXAMPLE					3
 
 /datum/map/example
 	name = "Test Map"
@@ -11,24 +12,27 @@
 
 	station_levels = list(
 		Z_LEVEL_FIRST_EXAMPLE,
-		Z_LEVEL_SECOND_EXAMPLE
+		Z_LEVEL_SECOND_EXAMPLE,
+		Z_LEVEL_THIRD_EXAMPLE
 		)
 
 	admin_levels = list()
 	contact_levels = list(
 		Z_LEVEL_FIRST_EXAMPLE,
-		Z_LEVEL_SECOND_EXAMPLE
+		Z_LEVEL_SECOND_EXAMPLE,
+		Z_LEVEL_THIRD_EXAMPLE
 		)
 
 	player_levels = list(
 		Z_LEVEL_FIRST_EXAMPLE,
-		Z_LEVEL_SECOND_EXAMPLE
+		Z_LEVEL_SECOND_EXAMPLE,
+		Z_LEVEL_THIRD_EXAMPLE
 		)
 
 	sealed_levels = list()
 	empty_levels = list()
-	accessible_z_levels = list("1" = 50, "2" = 50) // The defines can't be used here sadly.
-	base_turf_by_z = list("2" = /turf/simulated/open)
+	accessible_z_levels = list("1" = 50, "2" = 50, "3" = 50) // The defines can't be used here sadly.
+	base_turf_by_z = list("2" = /turf/simulated/open, "3" = /turf/simulated/open)
 
 	station_name  = "The Funhouse"
 	station_short = "Funhouse"

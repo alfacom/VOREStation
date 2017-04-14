@@ -131,6 +131,7 @@
 
 	if(can_fall())
 		handle_fall(below)
+		// TODO - handle fall on damage!
 
 //For children to override
 /atom/movable/proc/can_fall()
@@ -139,6 +140,8 @@
 
 	if(locate(/obj/structure/lattice, loc))
 		return FALSE
+
+	// TODO - catwalk?
 
 	// See if something prevents us from falling.
 	var/turf/below = GetBelow(src)
@@ -185,6 +188,7 @@
 /mob/living/carbon/human/handle_fall(var/turf/landing)
 	if(..())
 		return
+	// TODO - I think this will make you hit the open space...
 	to_chat(src, "<span class='danger'>You fall off and hit \the [landing]!</span>")
 	playsound(loc, "punch", 25, 1, -1)
 	var/damage = 20 // Because wounds heal rather quickly, 20 should be enough to discourage jumping off but not be enough to ruin you, at least for the first time.
