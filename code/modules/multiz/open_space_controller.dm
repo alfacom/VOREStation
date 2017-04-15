@@ -13,7 +13,7 @@
 	. = ..()
 	name = "openspace"
 	schedule_interval = world.tick_lag // every second
-	start_delay = 10 SECONDS
+	start_delay = 30 SECONDS
 	OS_controller = src
 	initialize_open_space()
 
@@ -57,7 +57,7 @@
 /turf/simulated/open/initialize()
 	. = ..()
 	if(open_space_initialised)
-		log_debug("[src] ([x],[y],[z]) queued for update for initialize()")
+		// log_debug("[src] ([x],[y],[z]) queued for update for initialize()")
 		OS_controller.add_turf(src)
 
 /turf/Entered(atom/movable/AM)
@@ -65,7 +65,7 @@
 	if(open_space_initialised && !AM.invisibility && isobj(AM))
 		var/turf/T = GetAbove(src)
 		if(isopenspace(T))
-			log_debug("[T] ([T.x],[T.y],[T.z]) queued for update for [src].Entered([AM])")
+			// log_debug("[T] ([T.x],[T.y],[T.z]) queued for update for [src].Entered([AM])")
 			OS_controller.add_turf(T, 1)
 
 /turf/Exited(atom/movable/AM)
@@ -73,7 +73,7 @@
 	if(open_space_initialised && !AM.invisibility && isobj(AM))
 		var/turf/T = GetAbove(src)
 		if(isopenspace(T))
-			log_debug("[T] ([T.x],[T.y],[T.z]) queued for update for [src].Exited([AM])")
+			// log_debug("[T] ([T.x],[T.y],[T.z]) queued for update for [src].Exited([AM])")
 			OS_controller.add_turf(T, 1)
 
 /obj/update_icon()
@@ -81,7 +81,7 @@
 	if(open_space_initialised && !invisibility)
 		var/turf/T = GetAbove(src)
 		if(isopenspace(T))
-			log_debug("[T] ([T.x],[T.y],[T.z]) queued for update for [src].update_icon()")
+			// log_debug("[T] ([T.x],[T.y],[T.z]) queued for update for [src].update_icon()")
 			OS_controller.add_turf(T, 1)
 
 // Ouch... this is painful. But is there any other way?
@@ -90,5 +90,5 @@
 	if(open_space_initialised && !invisibility)
 		var/turf/T = GetAbove(src)
 		if(isopenspace(T))
-			log_debug("[T] ([T.x],[T.y],[T.z]) queued for update for [src]New()")
+			// log_debug("[T] ([T.x],[T.y],[T.z]) queued for update for [src]New()")
 			OS_controller.add_turf(T, 1)
