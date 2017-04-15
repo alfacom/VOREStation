@@ -21,6 +21,7 @@
 	name = "open space"
 	icon = 'icons/turf/space.dmi'
 	icon_state = ""
+	desc = "\..."
 	// layer = 0 // How the hell did this get here?
 	density = 0
 	plane = OPENSPACE_PLANE
@@ -60,6 +61,13 @@
 	for(var/obj/O in src)
 		O.hide(0)
 
+/turf/simulated/open/examine(mob/user, distance, infix, suffix)
+	if(..(user, 2))
+		var/depth = 1
+		for(var/T = GetBelow(src); isopenspace(T); T = GetBelow(T))
+			depth += 1
+		to_chat(user, "It is about [depth] levels deep.")
+
 /**
 * Update icon and overlays of open space to be that of the turf below, plus any visible objects on that turf.
 */
@@ -92,7 +100,6 @@
 			var/image/over_OS_darkness = image('icons/turf/floors.dmi', "black_open")
 			over_OS_darkness.plane = OVER_OPENSPACE_PLANE
 			over_OS_darkness.layer = MOB_LAYER
-			over_OS_darkness.mouse_opacity = 0
 			overlays += over_OS_darkness
 
 		return 0
