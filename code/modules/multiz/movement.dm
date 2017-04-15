@@ -103,6 +103,17 @@
 		if(T.density)
 			return 1
 
+// TODO - Leshana Experimental
+
+//Execution by grand piano!
+/atom/movable/proc/get_fall_damage()
+	return 42
+
+//If atom stands under open space, it can prevent fall, or not
+/atom/proc/can_prevent_fall(var/atom/movable/mover, var/turf/coming_from)
+	return (!CanPass(mover, coming_from))
+
+////////////////////////////
 
 
 
@@ -140,8 +151,8 @@
 
 	if(locate(/obj/structure/lattice, loc))
 		return FALSE
-
-	// TODO - catwalk?
+	if(locate(/obj/structure/catwalk, loc))
+		return FALSE
 
 	// See if something prevents us from falling.
 	var/turf/below = GetBelow(src)

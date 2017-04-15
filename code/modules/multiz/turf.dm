@@ -92,6 +92,7 @@
 			var/image/over_OS_darkness = image('icons/turf/floors.dmi', "black_open")
 			over_OS_darkness.plane = OVER_OPENSPACE_PLANE
 			over_OS_darkness.layer = MOB_LAYER
+			over_OS_darkness.mouse_opacity = 0
 			overlays += over_OS_darkness
 
 		return 0
