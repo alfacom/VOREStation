@@ -158,14 +158,12 @@
 	return TRUE
 
 /obj/item/pipe/can_fall()
-	var/turf/simulated/open/below = loc
-	below = below.below
-
 	. = ..()
 
 	if(anchored)
 		return FALSE
 
+	var/turf/below = GetBelow(src)
 	if((locate(/obj/structure/disposalpipe/up) in below) || locate(/obj/machinery/atmospherics/pipe/zpipe/up in below))
 		return FALSE
 
@@ -176,22 +174,31 @@
 	return FALSE
 
 /atom/movable/proc/handle_fall(var/turf/landing)
+	// Say something before it falls!
+	var/turf/oldloc = loc
+	// Now lets move there!
 	Move(landing)
+
+	// Detect if we made a soft landing.
+	// TODO - Do this less snowflaky than hard coding stairs!
 	if(locate(/obj/structure/stairs) in landing)
 		return 1
 
-	if(istype(landing, /turf/simulated/open))
+	if(isopenspace(oldloc))
+		visible_message("\The [src] falls down through \the [landing]!", "You hear something ([src]@[x],[y],[z]) falling through the air.")
+	// TODO - Detect if it will stop here becuase it lands on a catwalk or something
+	if(isopenspace(landing))
 		visible_message("\The [src] falls from the deck above through \the [landing]!", "You hear a whoosh of displaced air.")
+		return 1 // Don't hit the open space - TODO-its not quite this simple ~Leshana
 	else
 		visible_message("\The [src] falls from the deck above and slams into \the [landing]!", "You hear something slam into the deck.")
 
 /mob/living/carbon/human/handle_fall(var/turf/landing)
 	if(..())
 		return
-	// TODO - I think this will make you hit the open space...
 	to_chat(src, "<span class='danger'>You fall off and hit \the [landing]!</span>")
 	playsound(loc, "punch", 25, 1, -1)
-	var/damage = 20 // Because wounds heal rather quickly, 20 should be enough to discourage jumping off but not be enough to ruin you, at least for the first time.
+	var/damage = 15 // Because wounds heal rather quickly, 15 should be enough to discourage jumping off but not be enough to ruin you, at least for the first time.
 	apply_damage(rand(0, damage), BRUTE, BP_HEAD)
 	apply_damage(rand(0, damage), BRUTE, BP_TORSO)
 	apply_damage(rand(0, damage), BRUTE, BP_L_LEG)
@@ -200,3 +207,12 @@
 	apply_damage(rand(0, damage), BRUTE, BP_R_ARM)
 	Weaken(4)
 	updatehealth()
+
+
+
+// TODO - This is a hack until someone can think of a better way of solving it.
+// Issue is that blood splatter is New()'d already in the turf, so Entered() is never called.
+/obj/effect/decal/cleanable/initialize()
+	if(isopenspace(loc))
+		src.fall()
+	return ..()

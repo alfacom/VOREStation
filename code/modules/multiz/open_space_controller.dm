@@ -22,7 +22,7 @@
 	OS_controller = src
 
 /datum/controller/process/open_space/doWork()
-	// We use a different list so any additions to the update lists during a delay from scheck() 
+	// We use a different list so any additions to the update lists during a delay from scheck()
 	// don't cause things to be cut from the list without being updated.
 	turfs_to_process_old = turfs_to_process
 	turfs_to_process = list()
