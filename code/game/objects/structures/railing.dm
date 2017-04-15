@@ -17,6 +17,7 @@
 
 /obj/structure/railing/New(loc, constructed = 0)
 	..()
+	// TODO - "constructed" is not passed to us. We need to find a way to do this safely.
 	if (constructed) // player-constructed railings
 		anchored = 0
 	if(climbable)
@@ -47,11 +48,11 @@
 	if(health < maxhealth)
 		switch(health / maxhealth)
 			if(0.0 to 0.5)
-				user << "<span class='warning'>It looks severely damaged!</span>"
+				to_chat(user, "<span class='warning'>It looks severely damaged!</span>")
 			if(0.25 to 0.5)
-				user << "<span class='warning'>It looks damaged!</span>"
+				to_chat(user, "<span class='warning'>It looks damaged!</span>")
 			if(0.5 to 1.0)
-				user << "<span class='notice'>It has a few scrapes and dents.</span>"
+				to_chat(user, "<span class='notice'>It has a few scrapes and dents.</span>")
 
 /obj/structure/railing/proc/take_damage(amount)
 	health -= amount
@@ -133,7 +134,7 @@
 		return 0
 
 	if(anchored)
-		usr << "It is fastened to the floor therefore you can't rotate it!"
+		to_chat(usr, "It is fastened to the floor therefore you can't rotate it!")
 		return 0
 
 	set_dir(turn(dir, 90))
@@ -149,7 +150,7 @@
 		return 0
 
 	if(anchored)
-		usr << "It is fastened to the floor therefore you can't rotate it!"
+		to_chat(usr, "It is fastened to the floor therefore you can't rotate it!")
 		return 0
 
 	set_dir(turn(dir, -90))
@@ -165,11 +166,12 @@
 		return 0
 
 	if(anchored)
-		usr << "It is fastened to the floor therefore you can't flip it!"
+		to_chat(usr, "It is fastened to the floor therefore you can't flip it!")
 		return 0
 
-	if(!neighbor_turf_passable())
-		usr << "You can't flip the [src] because something blocking it."
+	var/obj/occupied = neighbor_turf_impassable()
+	if(occupied)
+		to_chat(usr, "You can't flip \the [src] because there's \a [occupied] in the way.")
 		return 0
 
 	src.loc = get_step(src, src.dir)
@@ -209,7 +211,7 @@
 		user.visible_message(anchored ? "<span class='notice'>\The [user] begins unscrewing \the [src].</span>" : "<span class='notice'>\The [user] begins fasten \the [src].</span>" )
 		playsound(loc, 'sound/items/Screwdriver.ogg', 75, 1)
 		if(do_after(user, 10, src))
-			user << (anchored ? "<span class='notice'>You have unfastened \the [src] from the floor.</span>" : "<span class='notice'>You have fastened \the [src] to the floor.</span>")
+			to_chat(user, (anchored ? "<span class='notice'>You have unfastened \the [src] from the floor.</span>" : "<span class='notice'>You have fastened \the [src] to the floor.</span>"))
 			anchored = !anchored
 			update_icon()
 			return
@@ -221,7 +223,7 @@
 			var/mob/living/M = G.affecting
 			var/obj/occupied = turf_is_crowded()
 			if(occupied)
-				user << "<span class='danger'>There's \a [occupied] in the way.</span>"
+				to_chat(user, "<span class='danger'>There's \a [occupied] in the way.</span>")
 				return
 			if (G.state < 2)
 				if(user.a_intent == I_HURT)
@@ -231,7 +233,7 @@
 					visible_message("<span class='danger'>[G.assailant] slams [G.affecting]'s face against \the [src]!</span>")
 					playsound(loc, 'sound/effects/grillehit.ogg', 50, 1)
 				else
-					user << "<span class='danger'>You need a better grip to do that!</span>"
+					to_chat(user, "<span class='danger'>You need a better grip to do that!</span>")
 					return
 			else
 				if (get_turf(G.affecting) == get_turf(src))
@@ -263,7 +265,7 @@
 		else
 	return
 
-// Duplicated from structures.dm sadly.  TODO - desnowflake this
+// Duplicated from structures.dm, but its a bit different.
 /obj/structure/railing/do_climb(var/mob/living/user)
 	if(!can_climb(user))
 		return
@@ -279,11 +281,6 @@
 		climbers -= user
 		return
 
-	if(!neighbor_turf_passable())
-		user << "<span class='danger'>You can't climb there, the way is blocked.</span>"
-		climbers -= user
-		return
-
 	if(get_turf(user) == get_turf(src))
 		usr.forceMove(get_step(src, src.dir))
 	else
@@ -293,18 +290,29 @@
 	if(!anchored)	take_damage(maxhealth) // Fatboy
 	climbers -= user
 
+/obj/structure/railing/can_climb(var/mob/living/user, post_climb_check=0)
+	if(!..())
+		return 0
+
+	// Normal can_climb() handles climbing from adjacent turf onto our turf.  But railings also allow climbing
+	// from our turf onto an adjacent! If that is the case we need to do checks for that too...
+	if(get_turf(user) == get_turf(src))
+		var/obj/occupied = neighbor_turf_impassable()
+		if(occupied)
+			to_chat(user, "<span class='danger'>You can't climb there, there's \a [occupied] in the way.")
+			return 0
+	return 1
+
 // TODO - This here might require some investigation
-/obj/structure/proc/neighbor_turf_passable()
+/obj/structure/proc/neighbor_turf_impassable()
 	var/turf/T = get_step(src, src.dir)
 	if(!T || !istype(T))
 		return 0
 	if(T.density == 1)
-		return 0
-	// TODO - Check src.Adjacent(T)
+		return T
 	for(var/obj/O in T.contents)
 		if(istype(O,/obj/structure))
 			var/obj/structure/S = O
 			if(S.climbable) continue
-		if(O && O.density && !(O.flags & ON_BORDER)) //ON_BORDER structures are handled by the Adjacent() check.
+		if(O && O.density && !(O.flags & ON_BORDER && !(turn(O.dir, 180) & dir)))
 			return O
-	return 1
