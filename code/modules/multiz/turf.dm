@@ -21,7 +21,7 @@
 	name = "open space"
 	icon = 'icons/turf/space.dmi'
 	icon_state = ""
-	layer = 0
+	// layer = 0 // How the hell did this get here?
 	density = 0
 	plane = OPENSPACE_PLANE
 	pathweight = 100000 //Seriously, don't try and path over this one numbnuts
@@ -38,7 +38,7 @@
 	update()
 
 /turf/simulated/open/Entered(var/atom/movable/mover)
-	log_debug("[src] ([x],[y],[z]) Entered by [mover] ([mover.x],[mover.y],[mover.z])")
+	//log_debug("[src] ([x],[y],[z]) Entered by [mover] ([mover.x],[mover.y],[mover.z])")
 	. = ..()
 	mover.fall()
 
