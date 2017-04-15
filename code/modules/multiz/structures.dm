@@ -129,6 +129,7 @@
 	density = 0
 	opacity = 0
 	anchored = 1
+	layer = 2.4 // Above turf, but they're sort of the floor, so below objects.
 
 /obj/structure/stairs/initialize()
 	for(var/turf/turf in locs)
@@ -141,6 +142,8 @@
 
 /obj/structure/stairs/Uncross(atom/movable/A)
 	if(A.dir == dir)
+		// TODO - Fix the fact that you go up/down/up when doing stairs because Uncrossed is called for both turfs
+		//log_debug("[src] ([x],[y],[z]) Uncrossed by [A] ([A.x],[A.y],[A.z])")
 		// This is hackish but whatever.
 		var/turf/target = get_step(GetAbove(A), dir)
 		var/turf/source = A.loc

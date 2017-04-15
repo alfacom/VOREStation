@@ -33,7 +33,7 @@
 	return owner.examine(user, distance, infix, suffix)
 
 /mob/shadow/proc/sync_icon(var/mob/M)
-	name = M.name
+	name = "zshadow([M.name])"
 	icon = M.icon
 	icon_state = M.icon_state
 	color = M.color

@@ -38,6 +38,7 @@
 	update()
 
 /turf/simulated/open/Entered(var/atom/movable/mover)
+	log_debug("[src] ([x],[y],[z]) Entered by [mover] ([mover.x],[mover.y],[mover.z])")
 	. = ..()
 	mover.fall()
 
@@ -72,24 +73,27 @@
 		color = below.color
 		overlays += below.overlays
 
-		if(!istype(below, /turf/simulated/open))
-			// get objects (not mobs, they are handled by /obj/zshadow)
-			var/image/o_img = list()
-			for(var/obj/O in below)
-				if(O.invisibility) continue // Ignore objects that have any form of invisibility
-				if(O.loc != below) continue // Ignore multi-turf objects not directly below
-				var/image/temp2 = image(O, dir = O.dir, layer = O.layer)
-				temp2.plane = src.plane
-				temp2.color = O.color
-				temp2.overlays += O.overlays
-				// TODO Is pixelx/y needed?
-				o_img += temp2
-			overlays += o_img
+		var/below_is_open = isopenspace(below)
 
-		var/image/over_OS_darkness = image('icons/turf/floors.dmi', "black_open")
-		over_OS_darkness.plane = OVER_OPENSPACE_PLANE
-		over_OS_darkness.layer = MOB_LAYER
-		overlays += over_OS_darkness
+		// get objects (not mobs, they are handled by /obj/zshadow)
+		var/image/o_img = list()
+		for(var/obj/O in below)
+			if(O.invisibility) continue // Ignore objects that have any form of invisibility
+			if(O.loc != below) continue // Ignore multi-turf objects not directly below
+			var/image/temp2 = image(O, dir = O.dir, layer = O.layer)
+			temp2.plane = src.plane
+			temp2.color = O.color
+			temp2.overlays += O.overlays
+			// TODO Is pixelx/y needed?
+			o_img += temp2
+		overlays += o_img
+
+		if(!below_is_open)
+			var/image/over_OS_darkness = image('icons/turf/floors.dmi', "black_open")
+			over_OS_darkness.plane = OVER_OPENSPACE_PLANE
+			over_OS_darkness.layer = MOB_LAYER
+			overlays += over_OS_darkness
+
 		return 0
 	return PROCESS_KILL
 
