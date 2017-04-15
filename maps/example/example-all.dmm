@@ -23,64 +23,78 @@
 "aw" = (/obj/machinery/atmospherics/pipe/simple/visible{tag = "icon-intact (NORTHWEST)"; icon_state = "intact"; dir = 9},/obj/effect/floor_decal/corner/white/diagonal,/turf/simulated/floor/tiled/dark,/area/aisat)
 "ax" = (/obj/structure/ladder/up,/turf/simulated/floor/tiled/dark,/area/aisat)
 "ay" = (/obj/effect/floor_decal/industrial/hatch/yellow,/obj/machinery/portable_atmospherics/canister/air,/turf/simulated/floor/tiled/dark,/area/aisat)
-"az" = (/obj/effect/floor_decal/corner/white/diagonal,/obj/structure/railing{dir = 4},/obj/machinery/portable_atmospherics/canister/empty,/turf/simulated/floor/tiled/dark,/area/aisat)
-"aA" = (/obj/effect/floor_decal/industrial/hatch/yellow,/obj/structure/window/reinforced,/turf/simulated/floor/tiled/dark,/area/aisat)
-"aB" = (/obj/machinery/portable_atmospherics/canister/air,/obj/effect/floor_decal/corner/white/diagonal,/obj/structure/disposalpipe/segment,/turf/simulated/floor/tiled/dark,/area/aisat)
-"aC" = (/obj/effect/floor_decal/corner/white/diagonal,/obj/structure/railing{dir = 1},/turf/simulated/floor/tiled/dark,/area/aisat)
-"aD" = (/obj/machinery/light,/turf/simulated/floor/tiled/dark,/area/aisat)
-"aE" = (/obj/machinery/alarm{dir = 4; icon_state = "alarm0"; pixel_x = -22},/obj/machinery/light{icon_state = "tube1"; dir = 8},/obj/machinery/disposal,/obj/structure/disposalpipe/trunk{tag = "icon-pipe-t (NORTH)"; icon_state = "pipe-t"; dir = 1},/turf/simulated/floor/tiled/dark,/area/aisat)
-"aF" = (/obj/machinery/light{icon_state = "tube1"; dir = 4},/turf/simulated/floor/tiled/dark,/area/aisat)
-"aG" = (/obj/machinery/light_switch,/turf/simulated/wall,/area/aisat)
-"aH" = (/obj/machinery/light{icon_state = "tube1"; dir = 8},/turf/simulated/floor/tiled/dark,/area/aisat)
-"aI" = (/obj/machinery/light{icon_state = "tube1"; dir = 4},/obj/machinery/power/apc{dir = 4; name = "east bump"; pixel_x = 24},/obj/structure/cable/yellow{d2 = 2; icon_state = "0-2"},/turf/simulated/floor/tiled/dark,/area/aisat)
-"aJ" = (/obj/effect/floor_decal/corner/white/diagonal,/obj/structure/table/standard,/obj/item/device/multitool,/turf/simulated/floor/tiled/dark,/area/aisat)
-"aK" = (/obj/machinery/light{dir = 1},/obj/structure/table/standard,/obj/item/weapon/storage/belt/utility/full,/turf/simulated/floor/tiled/dark,/area/aisat)
-"aL" = (/obj/effect/floor_decal/corner/white/diagonal,/obj/structure/table/standard,/obj/item/clothing/gloves/yellow,/turf/simulated/floor/tiled/dark,/area/aisat)
-"aM" = (/obj/structure/cable/yellow{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/effect/floor_decal/corner/white/diagonal,/turf/simulated/floor/tiled/dark,/area/aisat)
-"aN" = (/obj/effect/landmark{name = "JoinLate"},/obj/effect/floor_decal/corner/white/diagonal,/turf/simulated/floor/tiled/dark,/area/aisat)
-"aO" = (/obj/effect/landmark/start,/turf/simulated/floor/tiled/dark,/area/aisat)
-"aP" = (/obj/structure/stairs/south,/turf/simulated/floor/tiled/dark,/area/aisat)
-"aQ" = (/obj/effect/floor_decal/sign/a,/turf/simulated/floor/tiled/dark,/area/aisat)
-"aR" = (/obj/machinery/light,/obj/effect/floor_decal/corner/white/diagonal,/turf/simulated/floor/tiled/dark,/area/aisat)
-"aS" = (/obj/structure/cable/yellow,/obj/structure/cable/yellow{d1 = 16; d2 = 0; icon_state = "16-0"},/turf/simulated/floor/plating,/area/aisat)
-"aT" = (/turf/simulated/floor/tiled/red,/area/aisat)
-"aU" = (/obj/turbolift_map_holder/example{dir = 1; icon = 'icons/obj/turbolift_preview_5x5.dmi'},/turf/simulated/floor/tiled/red,/area/aisat)
-"aV" = (/turf/simulated/wall,/area/aisat_interior)
-"aW" = (/obj/structure/lattice,/obj/machinery/atmospherics/pipe/zpipe/down{tag = "icon-down (EAST)"; icon_state = "down"; dir = 4},/obj/structure/disposalpipe/down,/turf/simulated/open,/area/aisat_interior)
-"aX" = (/obj/machinery/atmospherics/pipe/simple/visible{dir = 4},/obj/effect/floor_decal/corner/lime/diagonal,/turf/simulated/floor/tiled/dark,/area/aisat_interior)
-"aY" = (/obj/machinery/atmospherics/pipe/manifold/visible{dir = 1},/obj/effect/floor_decal/corner/lime/diagonal,/turf/simulated/floor/tiled/dark,/area/aisat_interior)
-"aZ" = (/obj/machinery/atmospherics/binary/pump/high_power{dir = 8},/obj/effect/floor_decal/corner/lime/diagonal,/turf/simulated/floor/tiled/dark,/area/aisat_interior)
-"ba" = (/obj/machinery/atmospherics/pipe/simple/visible{tag = "icon-intact (SOUTHWEST)"; icon_state = "intact"; dir = 10},/obj/effect/floor_decal/corner/lime/diagonal,/turf/simulated/floor/tiled/dark,/area/aisat_interior)
-"bb" = (/obj/effect/floor_decal/corner/lime/diagonal,/turf/simulated/floor/tiled/dark,/area/aisat_interior)
-"bc" = (/obj/machinery/light{dir = 1},/turf/simulated/floor/tiled/dark,/area/aisat_interior)
-"bd" = (/obj/structure/disposalpipe/segment,/turf/simulated/floor/plating,/area/aisat_interior)
-"be" = (/obj/machinery/atmospherics/pipe/simple/visible,/obj/effect/floor_decal/corner/lime/diagonal,/obj/machinery/meter,/turf/simulated/floor/tiled/dark,/area/aisat_interior)
-"bf" = (/obj/machinery/atmospherics/portables_connector{dir = 4},/obj/effect/floor_decal/corner/lime/diagonal,/turf/simulated/floor/tiled/dark,/area/aisat_interior)
-"bg" = (/obj/machinery/atmospherics/pipe/manifold/visible{tag = "icon-map (EAST)"; icon_state = "map"; dir = 4},/obj/effect/floor_decal/corner/lime/diagonal,/obj/machinery/meter,/turf/simulated/floor/tiled/dark,/area/aisat_interior)
-"bh" = (/turf/simulated/floor/tiled/dark,/area/aisat_interior)
-"bi" = (/turf/simulated/open,/area/aisat_interior)
-"bj" = (/obj/machinery/portable_atmospherics/canister/empty,/obj/effect/floor_decal/corner/lime/diagonal,/obj/structure/disposalpipe/segment,/turf/simulated/floor/tiled/dark,/area/aisat_interior)
-"bk" = (/obj/machinery/atmospherics/pipe/simple/visible{tag = "icon-intact (NORTHEAST)"; icon_state = "intact"; dir = 5},/obj/effect/floor_decal/corner/lime/diagonal,/turf/simulated/floor/tiled/dark,/area/aisat_interior)
-"bl" = (/obj/machinery/atmospherics/binary/pump/high_power{tag = "icon-map_off (EAST)"; icon_state = "map_off"; dir = 4},/obj/effect/floor_decal/corner/lime/diagonal,/turf/simulated/floor/tiled/dark,/area/aisat_interior)
-"bm" = (/obj/machinery/atmospherics/pipe/simple/visible{tag = "icon-intact (NORTHWEST)"; icon_state = "intact"; dir = 9},/obj/effect/floor_decal/corner/lime/diagonal,/turf/simulated/floor/tiled/dark,/area/aisat_interior)
-"bn" = (/obj/structure/ladder/updown,/turf/simulated/floor/tiled/dark,/area/aisat_interior)
-"bo" = (/obj/machinery/portable_atmospherics/canister/air,/obj/effect/floor_decal/corner/lime/diagonal,/obj/structure/disposalpipe/segment,/turf/simulated/floor/tiled/dark,/area/aisat_interior)
-"bp" = (/obj/machinery/light,/turf/simulated/floor/tiled/dark,/area/aisat_interior)
-"bq" = (/obj/machinery/alarm{dir = 4; icon_state = "alarm0"; pixel_x = -22},/obj/machinery/light{icon_state = "tube1"; dir = 8},/obj/machinery/disposal,/obj/structure/disposalpipe/trunk{tag = "icon-pipe-t (NORTH)"; icon_state = "pipe-t"; dir = 1},/turf/simulated/floor/tiled/dark,/area/aisat_interior)
-"br" = (/obj/machinery/light{icon_state = "tube1"; dir = 4},/turf/simulated/floor/tiled/dark,/area/aisat_interior)
-"bs" = (/obj/machinery/light_switch,/turf/simulated/wall,/area/aisat_interior)
-"bt" = (/obj/machinery/power/fractal_reactor,/obj/structure/cable/yellow{d2 = 4; icon_state = "0-4"},/obj/machinery/light{icon_state = "tube1"; dir = 8},/turf/simulated/floor/tiled/dark,/area/aisat_interior)
-"bu" = (/obj/structure/cable/yellow{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor/tiled/dark,/area/aisat_interior)
-"bv" = (/obj/machinery/power/apc{dir = 4; name = "east bump"; pixel_x = 24},/obj/structure/cable/yellow{d2 = 8; icon_state = "0-8"},/obj/structure/cable/yellow{d1 = 2; d2 = 8; icon_state = "2-8"},/obj/machinery/light{icon_state = "tube1"; dir = 4},/turf/simulated/floor/tiled/dark,/area/aisat_interior)
-"bw" = (/obj/structure/cable/yellow{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/effect/floor_decal/corner/lime/diagonal,/turf/simulated/floor/tiled/dark,/area/aisat_interior)
-"bx" = (/turf/simulated/floor/tiled/red,/area/aisat_interior)
-"by" = (/obj/effect/floor_decal/corner/lime/diagonal,/obj/structure/stairs/north,/turf/simulated/floor/tiled/dark,/area/aisat_interior)
-"bz" = (/obj/effect/floor_decal/sign/two,/turf/simulated/floor/tiled/dark,/area/aisat_interior)
-"bA" = (/obj/machinery/light,/obj/effect/floor_decal/corner/lime/diagonal,/turf/simulated/floor/tiled/dark,/area/aisat_interior)
-"bB" = (/obj/structure/lattice,/obj/structure/cable/yellow{d1 = 32; icon_state = "32-1"},/turf/simulated/open,/area/aisat_interior)
-"bC" = (/obj/effect/landmark/map_data{height = 3},/turf/space,/area/space)
-"bD" = (/obj/structure/ladder,/turf/simulated/floor/tiled/dark,/area/aisat_interior)
-"bE" = (/obj/effect/floor_decal/corner/lime/diagonal,/obj/machinery/light,/turf/simulated/floor/tiled/dark,/area/aisat_interior)
+"az" = (/turf/simulated/floor/tiled,/area/aisat)
+"aA" = (/obj/effect/floor_decal/corner/white/diagonal,/obj/structure/railing{dir = 4},/obj/machinery/portable_atmospherics/canister/empty,/turf/simulated/floor/tiled/dark,/area/aisat)
+"aB" = (/obj/effect/floor_decal/industrial/hatch/yellow,/obj/structure/window/reinforced,/turf/simulated/floor/tiled/dark,/area/aisat)
+"aC" = (/obj/machinery/portable_atmospherics/canister/air,/obj/effect/floor_decal/corner/white/diagonal,/obj/structure/disposalpipe/segment,/turf/simulated/floor/tiled/dark,/area/aisat)
+"aD" = (/obj/structure/stairs/south,/turf/simulated/floor/tiled,/area/aisat)
+"aE" = (/obj/effect/floor_decal/corner/white/diagonal,/obj/structure/railing{dir = 1},/turf/simulated/floor/tiled/dark,/area/aisat)
+"aF" = (/obj/machinery/light,/turf/simulated/floor/tiled/dark,/area/aisat)
+"aG" = (/turf/simulated/wall,/area/aisat_interior)
+"aH" = (/obj/machinery/alarm{dir = 4; icon_state = "alarm0"; pixel_x = -22},/obj/machinery/light{icon_state = "tube1"; dir = 8},/obj/machinery/disposal,/obj/structure/disposalpipe/trunk{tag = "icon-pipe-t (NORTH)"; icon_state = "pipe-t"; dir = 1},/turf/simulated/floor/tiled/dark,/area/aisat)
+"aI" = (/obj/machinery/light{icon_state = "tube1"; dir = 4},/turf/simulated/floor/tiled/dark,/area/aisat)
+"aJ" = (/obj/machinery/light_switch,/turf/simulated/wall,/area/aisat)
+"aK" = (/obj/machinery/light{icon_state = "tube1"; dir = 8},/turf/simulated/floor/tiled/dark,/area/aisat)
+"aL" = (/obj/machinery/light{icon_state = "tube1"; dir = 4},/obj/machinery/power/apc{dir = 4; name = "east bump"; pixel_x = 24},/obj/structure/cable/yellow{d2 = 2; icon_state = "0-2"},/turf/simulated/floor/tiled/dark,/area/aisat)
+"aM" = (/turf/simulated/floor/tiled,/area/aisat_interior)
+"aN" = (/obj/machinery/light{dir = 1},/turf/simulated/floor/tiled,/area/aisat_interior)
+"aO" = (/obj/effect/floor_decal/corner/white/diagonal,/obj/structure/table/standard,/obj/item/device/multitool,/turf/simulated/floor/tiled/dark,/area/aisat)
+"aP" = (/obj/machinery/light{dir = 1},/obj/structure/table/standard,/obj/item/weapon/storage/belt/utility/full,/turf/simulated/floor/tiled/dark,/area/aisat)
+"aQ" = (/obj/effect/floor_decal/corner/white/diagonal,/obj/structure/table/standard,/obj/item/clothing/gloves/yellow,/turf/simulated/floor/tiled/dark,/area/aisat)
+"aR" = (/obj/structure/cable/yellow{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/effect/floor_decal/corner/white/diagonal,/turf/simulated/floor/tiled/dark,/area/aisat)
+"aS" = (/obj/effect/landmark{name = "JoinLate"},/obj/effect/floor_decal/corner/white/diagonal,/turf/simulated/floor/tiled/dark,/area/aisat)
+"aT" = (/obj/effect/landmark/start,/turf/simulated/floor/tiled/dark,/area/aisat)
+"aU" = (/obj/structure/stairs/south,/turf/simulated/floor/tiled,/area/aisat_interior)
+"aV" = (/obj/effect/floor_decal/corner/white/diagonal,/turf/simulated/wall,/area/aisat)
+"aW" = (/obj/structure/stairs/south,/turf/simulated/floor/tiled/dark,/area/aisat)
+"aX" = (/obj/effect/floor_decal/sign/a,/turf/simulated/floor/tiled/dark,/area/aisat)
+"aY" = (/obj/effect/floor_decal/corner/white/diagonal,/obj/structure/stairs/south,/turf/simulated/floor/tiled/dark,/area/aisat)
+"aZ" = (/obj/machinery/light,/obj/effect/floor_decal/corner/white/diagonal,/turf/simulated/floor/tiled/dark,/area/aisat)
+"ba" = (/obj/machinery/light,/obj/effect/floor_decal/corner/white/diagonal,/turf/simulated/wall,/area/aisat)
+"bb" = (/obj/structure/cable/yellow,/obj/structure/cable/yellow{d1 = 16; d2 = 0; icon_state = "16-0"},/turf/simulated/floor/plating,/area/aisat)
+"bc" = (/turf/simulated/floor/tiled/red,/area/aisat)
+"bd" = (/obj/turbolift_map_holder/example{dir = 1; icon = 'icons/obj/turbolift_preview_5x5.dmi'},/turf/simulated/floor/tiled/red,/area/aisat)
+"be" = (/obj/structure/lattice,/obj/machinery/atmospherics/pipe/zpipe/down{tag = "icon-down (EAST)"; icon_state = "down"; dir = 4},/obj/structure/disposalpipe/down,/turf/simulated/open,/area/aisat_interior)
+"bf" = (/obj/machinery/atmospherics/pipe/simple/visible{dir = 4},/obj/effect/floor_decal/corner/lime/diagonal,/turf/simulated/floor/tiled/dark,/area/aisat_interior)
+"bg" = (/obj/machinery/atmospherics/pipe/manifold/visible{dir = 1},/obj/effect/floor_decal/corner/lime/diagonal,/turf/simulated/floor/tiled/dark,/area/aisat_interior)
+"bh" = (/obj/machinery/atmospherics/binary/pump/high_power{dir = 8},/obj/effect/floor_decal/corner/lime/diagonal,/turf/simulated/floor/tiled/dark,/area/aisat_interior)
+"bi" = (/obj/machinery/atmospherics/pipe/simple/visible{tag = "icon-intact (SOUTHWEST)"; icon_state = "intact"; dir = 10},/obj/effect/floor_decal/corner/lime/diagonal,/turf/simulated/floor/tiled/dark,/area/aisat_interior)
+"bj" = (/obj/effect/floor_decal/corner/lime/diagonal,/turf/simulated/floor/tiled/dark,/area/aisat_interior)
+"bk" = (/obj/machinery/light{dir = 1},/turf/simulated/floor/tiled/dark,/area/aisat_interior)
+"bl" = (/obj/structure/disposalpipe/segment,/turf/simulated/floor/plating,/area/aisat_interior)
+"bm" = (/obj/machinery/atmospherics/pipe/simple/visible,/obj/effect/floor_decal/corner/lime/diagonal,/obj/machinery/meter,/turf/simulated/floor/tiled/dark,/area/aisat_interior)
+"bn" = (/obj/machinery/atmospherics/portables_connector{dir = 4},/obj/effect/floor_decal/corner/lime/diagonal,/turf/simulated/floor/tiled/dark,/area/aisat_interior)
+"bo" = (/obj/machinery/atmospherics/pipe/manifold/visible{tag = "icon-map (EAST)"; icon_state = "map"; dir = 4},/obj/effect/floor_decal/corner/lime/diagonal,/obj/machinery/meter,/turf/simulated/floor/tiled/dark,/area/aisat_interior)
+"bp" = (/turf/simulated/floor/tiled/dark,/area/aisat_interior)
+"bq" = (/turf/simulated/open,/area/aisat_interior)
+"br" = (/obj/machinery/portable_atmospherics/canister/empty,/obj/effect/floor_decal/corner/lime/diagonal,/obj/structure/disposalpipe/segment,/turf/simulated/floor/tiled/dark,/area/aisat_interior)
+"bs" = (/obj/machinery/atmospherics/pipe/simple/visible{tag = "icon-intact (NORTHEAST)"; icon_state = "intact"; dir = 5},/obj/effect/floor_decal/corner/lime/diagonal,/turf/simulated/floor/tiled/dark,/area/aisat_interior)
+"bt" = (/obj/machinery/atmospherics/binary/pump/high_power{tag = "icon-map_off (EAST)"; icon_state = "map_off"; dir = 4},/obj/effect/floor_decal/corner/lime/diagonal,/turf/simulated/floor/tiled/dark,/area/aisat_interior)
+"bu" = (/obj/machinery/atmospherics/pipe/simple/visible{tag = "icon-intact (NORTHWEST)"; icon_state = "intact"; dir = 9},/obj/effect/floor_decal/corner/lime/diagonal,/turf/simulated/floor/tiled/dark,/area/aisat_interior)
+"bv" = (/obj/structure/ladder/updown,/turf/simulated/floor/tiled/dark,/area/aisat_interior)
+"bw" = (/obj/machinery/portable_atmospherics/canister/air,/obj/effect/floor_decal/corner/lime/diagonal,/obj/structure/disposalpipe/segment,/turf/simulated/floor/tiled/dark,/area/aisat_interior)
+"bx" = (/obj/machinery/light,/turf/simulated/floor/tiled/dark,/area/aisat_interior)
+"by" = (/obj/machinery/alarm{dir = 4; icon_state = "alarm0"; pixel_x = -22},/obj/machinery/light{icon_state = "tube1"; dir = 8},/obj/machinery/disposal,/obj/structure/disposalpipe/trunk{tag = "icon-pipe-t (NORTH)"; icon_state = "pipe-t"; dir = 1},/turf/simulated/floor/tiled/dark,/area/aisat_interior)
+"bz" = (/obj/machinery/light{icon_state = "tube1"; dir = 4},/turf/simulated/floor/tiled/dark,/area/aisat_interior)
+"bA" = (/obj/machinery/light_switch,/turf/simulated/wall,/area/aisat_interior)
+"bB" = (/obj/machinery/power/fractal_reactor,/obj/structure/cable/yellow{d2 = 4; icon_state = "0-4"},/obj/machinery/light{icon_state = "tube1"; dir = 8},/turf/simulated/floor/tiled/dark,/area/aisat_interior)
+"bC" = (/obj/structure/cable/yellow{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor/tiled/dark,/area/aisat_interior)
+"bD" = (/obj/machinery/power/apc{dir = 4; name = "east bump"; pixel_x = 24},/obj/structure/cable/yellow{d2 = 8; icon_state = "0-8"},/obj/structure/cable/yellow{d1 = 2; d2 = 8; icon_state = "2-8"},/obj/machinery/light{icon_state = "tube1"; dir = 4},/turf/simulated/floor/tiled/dark,/area/aisat_interior)
+"bE" = (/obj/structure/cable/yellow{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/effect/floor_decal/corner/lime/diagonal,/turf/simulated/floor/tiled/dark,/area/aisat_interior)
+"bF" = (/obj/structure/stairs/north,/turf/simulated/floor/tiled,/area/aisat_interior)
+"bG" = (/turf/simulated/floor/tiled/red,/area/aisat_interior)
+"bH" = (/obj/effect/floor_decal/corner/lime/diagonal,/obj/structure/stairs/north,/turf/simulated/floor/tiled/dark,/area/aisat_interior)
+"bI" = (/obj/effect/floor_decal/sign/two,/turf/simulated/floor/tiled/dark,/area/aisat_interior)
+"bJ" = (/obj/machinery/light,/obj/effect/floor_decal/corner/lime/diagonal,/turf/simulated/floor/tiled/dark,/area/aisat_interior)
+"bK" = (/obj/structure/lattice,/obj/structure/cable/yellow{d1 = 32; icon_state = "32-1"},/turf/simulated/open,/area/aisat_interior)
+"bL" = (/obj/effect/landmark/map_data{height = 3},/turf/space,/area/space)
+"bM" = (/obj/structure/ladder,/turf/simulated/floor/tiled/dark,/area/aisat_interior)
+"bN" = (/obj/effect/floor_decal/corner/lime/diagonal,/obj/machinery/light,/turf/simulated/floor/tiled/dark,/area/aisat_interior)
+"bO" = (/turf/simulated/mineral,/area/aisat_interior)
+"bP" = (/obj/machinery/door/airlock/engineering,/turf/simulated/floor/tiled,/area/aisat_interior)
+"bQ" = (/obj/item/mecha_parts/mecha_equipment/tool/drill/diamonddrill,/obj/item/weapon/pickaxe/diamonddrill,/turf/simulated/floor/tiled/dark,/area/aisat_interior)
+"bR" = (/obj/machinery/light,/obj/effect/floor_decal/corner/lime/diagonal,/turf/simulated/mineral,/area/aisat_interior)
+"bS" = (/obj/effect/floor_decal/corner/lime/diagonal,/turf/simulated/mineral,/area/aisat_interior)
 
 (1,1,1) = {"
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
@@ -96,22 +110,22 @@ aaaaaaaaaaaaaaaaabababababababababababababababaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaabacadaeafagahaiahahajakakahabaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaabalahamanaoahapahaqarararasabaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaabatahauavawahaxahaqayararasabaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaabatahahahahahapahazararaAasabaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaabaBahahahahahapahahaCaCaCahabaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaabaBahahahahahaDahahahahahahabaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaabaEapapapapaFaGaHapapapapaIabaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaabahahahahahaJaKaLahahahahaMabaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaabahahaNaNaNahapahahahahahaMabaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaabahahaNaNaNahaOahahahahahaMabaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaabapabaNaNaNahapahahahahahaMabaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaabaPabahahahahaQahahahahahaMabaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaabababahaRahahapahahaRahahaSabaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaababababababapapapababababababaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaabaTaTaTaTaTabaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaabaTaTaTaTaTabaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaabaTaTaTaTaTabaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaabaTaTaTaTaTabaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaabaUaTaTaTaTabaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaabatahahazazahapahaAararaBasabaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaabaCahahaDaDahapahahaEaEaEahabaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaabaCahahahahahaFahabazazabahabaaaaaaaaaaaaaaaaaa
+aaaaaGaGaGaGaGaGabaHapapapapaIaJaKabaDaDabaLabaaaaaaaaaaaaaaaaaa
+aaaaaGaMaMaNaMaMazahahahahahaOaPaQababababaRabaaaaaaaaaaaaaaaaaa
+aaaaaGaMaMaMaMaMazahahaSaSaSahapahahahahahaRabaaaaaaaaaaaaaaaaaa
+aaaaaGaMaMaGaMaGabahahaSaSaSahaTahahahahahaRabaaaaaaaaaaaaaaaaaa
+aaaaaGaUaUaGaMaMabapabaSaSaSahapahaVahahaVaRabaaaaaaaaaaaaaaaaaa
+aaaaaGaGaGaGaMaMabaWabahahahahaXahaVaYaYaVaRabaaaaaaaaaaaaaaaaaa
+aaaaaGaGaGaGaMaMabababahaZahahapahaVbaaVaVbbabaaaaaaaaaaaaaaaaaa
+aaaaaGaGaGaGaGaGababababababapapapababababababaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaabbcbcbcbcbcabaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaabbcbcbcbcbcabaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaabbcbcbcbcbcabaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaabbcbcbcbcbcabaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaabbdbcbcbcbcabaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaabababababababaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
@@ -127,27 +141,27 @@ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaVaWaXaYaZbabbbcbbbbbbbbbbbbaVaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaVbdbbbebfbgbbbhbbbbbibibibbaVaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaVbjbbbkblbmbbbnbbbbbibibibbaVaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaVbjbbbbbbbbbbbhbbbbbibibibbaVaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaVbobbbbbbbbbbbhbbbbbbbbbbbbaVaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaVbobbbbbbbbbbbpbbbbbbbbbbbbaVaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaVbqbhbhbhbhbrbsbtbububububvaVaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaVbbbbbbbbbbbbbcbbbbbbbbbbbwaVaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaVbbbbbbbbbbbbbhbbbbbbbbbbbwaVaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaVaVaVaVaVbbbbbhbbbbbbbbbbbwaVaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaVbxaVbyaVbbbbbhbbbbbbbbbbbwaVaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaVbxaVbbaVbbbbbzbbbbbbbbbbbwaVaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaVbbbbbbbAbbbbbhbbbbbAbbbbbBaVaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaVaVaVaVaVaVbhbhbhaVaVaVaVaVaVaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaVbxbxbxbxbxaVaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaVbxbxbxbxbxaVaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaVbxbxbxbxbxaVaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaVbxbxbxbxbxaVaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaVbxbxbxbxbxaVaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaVaVaVaVaVaVaVaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaGaGaGaGaGaGaGaGaGaGaGaGaGaGaGaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaGbebfbgbhbibjbkbjbjbjbjbjbjaGaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaGblbjbmbnbobjbpbjbjbqbqbqbjaGaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaGbrbjbsbtbubjbvbjbjbqbqbqbjaGaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaGbrbjbjbjbjbjbpbjbjbqbqbqbjaGaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaGbwbjbjbjbjbjbpbjbjbjbjbjbjaGaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaGbwbjbjbjbjbjbxbjbjbjbjbjbjaGaaaaaaaaaaaaaaaaaa
+aaaaaGaGaGaGaGaGaGbybpbpbpbpbzbAbBbCbCbCbCbDaGaaaaaaaaaaaaaaaaaa
+aaaaaGbqbqaGaGaGaGbjbjbjbjbjbjbkbjbjbjbjbjbEaGaaaaaaaaaaaaaaaaaa
+aaaaaGbqbqaGaGaGaGbjbjbjbjbjbjbpbjbjbjbjbjbEaGaaaaaaaaaaaaaaaaaa
+aaaaaGaMaMaGbFbFaGaGaGaGaGbjbjbpbjbjbjbjbjbEaGaaaaaaaaaaaaaaaaaa
+aaaaaGaMaMaGaMaMaGbGaGbHaGbjbjbpbjbjbjbjbjbEaGaaaaaaaaaaaaaaaaaa
+aaaaaGaMaMaNaMaMaGbGaGbjaGbjbjbIbjbjbjbjbjbEaGaaaaaaaaaaaaaaaaaa
+aaaaaGaMaMaMaMaMaGbjbjbjbJbjbjbpbjbjbJbjbjbKaGaaaaaaaaaaaaaaaaaa
+aaaaaGaGaGaGaGaGaGaGaGaGaGaGbpbpbpaGaGaGaGaGaGaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaGbGbGbGbGbGaGaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaGbGbGbGbGbGaGaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaGbGbGbGbGbGaGaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaGbGbGbGbGbGaGaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaGbGbGbGbGbGaGaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaGaGaGaGaGaGaGaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 "}
@@ -161,28 +175,28 @@ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaabCaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaVaVaVaVaVaVaVaVaVaVaVaVaVaVaVaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaVaWaXaYaZbabbbcbbbbbbbbbbbbaVaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaVbdbbbebfbgbbbhbbbbbibibibbaVaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaVbjbbbkblbmbbbDbbbbbibibibbaVaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaVbjbbbbbbbbbbbhbbbbbibibibbaVaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaVbobbbbbbbbbbbhbbbbbbbbbbbbaVaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaVbobbbbbbbbbbbpbbbbbbbbbbbbaVaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaVbqbhbhbhbhbrbsbtbububububvaVaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaVbbbbbbbbbbbbbcbbbbbbbbbbbwaVaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaVbbbEbbbEbbbbbhbbbbbbbbbbbwaVaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaVbbaVbbaVbbbbbhbbbbbbbbbbbwaVaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaVbbaVbxaVbbbbbhbbbbbbbbbbbwaVaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaVbbaVbxaVbbbbbzbbbbbbbbbbbwaVaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaVbEaVaVaVbEbbbhbbbbbAbbbbbBaVaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaVaVaVaVaVaVbhbhbhaVaVaVaVaVaVaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaVbxbxbxbxbxaVaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaVbxbxbxbxbxaVaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaVbxbxbxbxbxaVaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaVbxbxbxbxbxaVaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaVbxbxbxbxbxaVaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaVaVaVaVaVaVaVaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaabLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaGaGaGaGaGaGaGaGaGaGaGaGaGaGaGaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaGbebfbgbhbibjbkbpbpbpbpbpbpaGaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaGblbjbmbnbobjbpbpbpbqbqbqbpaGaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaGbrbjbsbtbubjbMbpbpbqbqbqbpaGaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaGbrbpbpbpbpbpbpbpbpbqbqbqbpaGaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaGbwbpbpbpbpbpbpbpbpbpbpbpbpaGaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaGbwbpbpbpbpbpbxbpbpbpbpbpbpaGaaaaaaaaaaaaaaaaaa
+aaaaaGaGaGaGaGaGaGbybpbpbpbpbzbAbBbCbCbCbCbDaGaaaaaaaaaaaaaaaaaa
+aaaaaGaMaMaNaMaMaMbjbjbjbjbjbjbkbpbpbpbpbpbEaGaaaaaaaaaaaaaaaaaa
+aaaaaGaMaMaMaMaMaMbjbNbjbNbjbjbpbpbObObObObEaGaaaaaaaaaaaaaaaaaa
+aaaaaGaGbPaGaMaMaGbjaGbjaGbjbjbpbpbObObObObEaGaaaaaaaaaaaaaaaaaa
+aaaaaGaMaMaGaMaMaGbjaGbGaGbjbjbQbpbObObObObEaGaaaaaaaaaaaaaaaaaa
+aaaaaGaMaMaGbqbqaGbjaGbGaGbjbjbIbpbObObObObEaGaaaaaaaaaaaaaaaaaa
+aaaaaGaMaMaGbqbqaGbNaGaGaGbNbjbpbjbjbRbSbjbKaGaaaaaaaaaaaaaaaaaa
+aaaaaGaGaGaGaGaGaGaGaGaGaGaGbpbpbpaGaGaGaGaGaGaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaGbGbGbGbGbGaGaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaGbGbGbGbGbGaGaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaGbGbGbGbGbGaGaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaGbGbGbGbGbGaGaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaGbGbGbGbGbGaGaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaGaGaGaGaGaGaGaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 "}

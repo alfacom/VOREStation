@@ -13,7 +13,7 @@
 	. = ..()
 	name = "openspace"
 	schedule_interval = world.tick_lag // every second
-	start_delay = 12
+	start_delay = 10 SECONDS
 	OS_controller = src
 	initialize_open_space()
 
@@ -49,7 +49,7 @@
 // Do the initial updates of open space turfs when the game starts. This will lag!
 /datum/controller/process/open_space/proc/initialize_open_space()
 	// Do initial setup from bottom to top.
-	for(var/zlevel = world.maxz to 1)
+	for(var/zlevel = 1 to world.maxz)
 		for(var/turf/simulated/open/T in block(locate(1, 1, zlevel), locate(world.maxx, world.maxy, zlevel)))
 			add_turf(T)
 	open_space_initialised = TRUE
@@ -57,20 +57,38 @@
 /turf/simulated/open/initialize()
 	. = ..()
 	if(open_space_initialised)
+		log_debug("[src] ([x],[y],[z]) queued for update for initialize()")
 		OS_controller.add_turf(src)
 
 /turf/Entered(atom/movable/AM)
 	. = ..()
-	// Update the turf above us (if any)
-	// TODO - don't update if its a mob, since thats handled by /obj/zshadow?
-	// TODO - Don't update if its a zshadow either?
-	// TODO - Don't update if it has invisibility since that doesn't affect it?
-	if(open_space_initialised && isobj(AM))
+	if(open_space_initialised && !AM.invisibility && isobj(AM))
 		var/turf/T = GetAbove(src)
-		if(T) OS_controller.add_turf(T, 1)
+		if(isopenspace(T))
+			log_debug("[T] ([T.x],[T.y],[T.z]) queued for update for [src].Entered([AM])")
+			OS_controller.add_turf(T, 1)
 
 /turf/Exited(atom/movable/AM)
 	. = ..()
-	if(open_space_initialised && isobj(AM))
+	if(open_space_initialised && !AM.invisibility && isobj(AM))
 		var/turf/T = GetAbove(src)
-		if(T) OS_controller.add_turf(T, 1)
+		if(isopenspace(T))
+			log_debug("[T] ([T.x],[T.y],[T.z]) queued for update for [src].Exited([AM])")
+			OS_controller.add_turf(T, 1)
+
+/obj/update_icon()
+	. = ..()
+	if(open_space_initialised && !invisibility)
+		var/turf/T = GetAbove(src)
+		if(isopenspace(T))
+			log_debug("[T] ([T.x],[T.y],[T.z]) queued for update for [src].update_icon()")
+			OS_controller.add_turf(T, 1)
+
+// Ouch... this is painful. But is there any other way?
+/obj/New()
+	. = ..()
+	if(open_space_initialised && !invisibility)
+		var/turf/T = GetAbove(src)
+		if(isopenspace(T))
+			log_debug("[T] ([T.x],[T.y],[T.z]) queued for update for [src]New()")
+			OS_controller.add_turf(T, 1)

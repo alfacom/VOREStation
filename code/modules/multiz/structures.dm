@@ -141,14 +141,12 @@
 			above.ChangeTurf(/turf/simulated/open)
 
 /obj/structure/stairs/Uncross(atom/movable/A)
-	if(A.dir == dir)
-		// TODO - Fix the fact that you go up/down/up when doing stairs because Uncrossed is called for both turfs
-		//log_debug("[src] ([x],[y],[z]) Uncrossed by [A] ([A.x],[A.y],[A.z])")
+	if(A.dir == dir && upperStep(A.loc))
 		// This is hackish but whatever.
 		var/turf/target = get_step(GetAbove(A), dir)
 		var/turf/source = A.loc
 		if(target.Enter(A, source))
-			A.loc = target
+			A.forceMove(target)
 			target.Entered(A, source)
 			if(isliving(A))
 				var/mob/living/L = A
@@ -156,6 +154,9 @@
 					L.pulling.forceMove(target)
 		return 0
 	return 1
+
+/obj/structure/stairs/proc/upperStep(var/turf/T)
+	return (T == loc)
 
 /obj/structure/stairs/CanPass(obj/mover, turf/source, height, airflow)
 	return airflow || !density

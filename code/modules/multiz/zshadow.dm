@@ -2,7 +2,7 @@
 	var/mob/shadow/shadow
 
 /mob/shadow
-	plane = OPENSPACE_PLANE
+	plane = OVER_OPENSPACE_PLANE
 	name = "shadow"
 	desc = "Z-level shadow"
 	anchored = 1
@@ -36,7 +36,8 @@
 	name = "zshadow([M.name])"
 	icon = M.icon
 	icon_state = M.icon_state
-	color = M.color
+	//color = M.color
+	color = "#848484"
 	overlays = M.overlays
 	transform = M.transform
 	dir = M.dir

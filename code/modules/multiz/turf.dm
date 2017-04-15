@@ -21,7 +21,8 @@
 	name = "open space"
 	icon = 'icons/turf/space.dmi'
 	icon_state = ""
-	layer = 0
+	desc = "\..."
+	// layer = 0 // How the hell did this get here?
 	density = 0
 	plane = OPENSPACE_PLANE
 	pathweight = 100000 //Seriously, don't try and path over this one numbnuts
@@ -38,7 +39,7 @@
 	update()
 
 /turf/simulated/open/Entered(var/atom/movable/mover)
-	log_debug("[src] ([x],[y],[z]) Entered by [mover] ([mover.x],[mover.y],[mover.z])")
+	//log_debug("[src] ([x],[y],[z]) Entered by [mover] ([mover.x],[mover.y],[mover.z])")
 	. = ..()
 	mover.fall()
 
@@ -59,6 +60,13 @@
 /turf/simulated/open/levelupdate()
 	for(var/obj/O in src)
 		O.hide(0)
+
+/turf/simulated/open/examine(mob/user, distance, infix, suffix)
+	if(..(user, 2))
+		var/depth = 1
+		for(var/T = GetBelow(src); isopenspace(T); T = GetBelow(T))
+			depth += 1
+		to_chat(user, "It is about [depth] levels deep.")
 
 /**
 * Update icon and overlays of open space to be that of the turf below, plus any visible objects on that turf.
