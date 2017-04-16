@@ -124,7 +124,7 @@
 		if(B)
 			B.internal_contents += M
 
-	owner.visible_message("<font color='green'><b>[owner] expels everything from their [lowertext(name)]!</b></font>")
+	owner.visible_message("<font color='green'><b>[owner] expels everything from their [rlowertext(name)]!</b></font>")
 	return 1
 
 // Release a specific atom from the contents of this belly into the owning mob's location.
@@ -156,7 +156,7 @@
 	if(B)
 		B.internal_contents += M
 
-	owner.visible_message("<font color='green'><b>[owner] expels [M] from their [lowertext(name)]!</b></font>")
+	owner.visible_message("<font color='green'><b>[owner] expels [M] from their [rlowertext(name)]!</b></font>")
 	owner.update_icons()
 	return 1
 
@@ -182,7 +182,7 @@
 		var/formatted_message
 		var/raw_message = pick(examine_messages)
 
-		formatted_message = replacetext(raw_message,"%belly",lowertext(name))
+		formatted_message = replacetext(raw_message,"%belly",rlowertext(name))
 
 		return("<span class='warning'>[formatted_message]</span><BR>")
 
@@ -214,7 +214,7 @@
 /datum/belly/proc/set_messages(var/raw_text, var/type, var/delim = "\n\n")
 	ASSERT(type == "smo" || type == "smi" || type == "dmo" || type == "dmp" || type == "em")
 
-	var/list/raw_list = text2list(html_encode(raw_text),delim)
+	var/list/raw_list = text2list(rhtml_encode(raw_text),delim)
 	if(raw_list.len > 10)
 		raw_list.Cut(11)
 		log_debug("[owner] tried to set [name] with 11+ messages")
@@ -377,11 +377,11 @@
 
 	struggle_outer_message = replacetext(struggle_outer_message,"%pred",owner)
 	struggle_outer_message = replacetext(struggle_outer_message,"%prey",R)
-	struggle_outer_message = replacetext(struggle_outer_message,"%belly",lowertext(name))
+	struggle_outer_message = replacetext(struggle_outer_message,"%belly",rlowertext(name))
 
 	struggle_user_message = replacetext(struggle_user_message,"%pred",owner)
 	struggle_user_message = replacetext(struggle_user_message,"%prey",R)
-	struggle_user_message = replacetext(struggle_user_message,"%belly",lowertext(name))
+	struggle_user_message = replacetext(struggle_user_message,"%belly",rlowertext(name))
 
 	struggle_outer_message = "<span class='alert'>" + struggle_outer_message + "</span>"
 	struggle_user_message = "<span class='alert'>" + struggle_user_message + "</span>"

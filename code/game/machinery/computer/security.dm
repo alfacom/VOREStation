@@ -285,7 +285,7 @@ What a mess.*/
 				if ((!( t1 ) || usr.stat || !( authenticated ) || usr.restrained() || !in_range(src, usr)))
 					return
 				Perp = new/list()
-				t1 = lowertext(t1)
+				t1 = rlowertext(t1)
 				var/list/components = splittext(t1, " ")
 				if(components.len > 5)
 					return //Lets not let them search too greedily.
@@ -328,9 +328,9 @@ What a mess.*/
 					return
 				active1 = null
 				active2 = null
-				t1 = lowertext(t1)
+				t1 = rlowertext(t1)
 				for(var/datum/data/record/R in data_core.general)
-					if (lowertext(R.fields["fingerprint"]) == t1)
+					if (rlowertext(R.fields["fingerprint"]) == t1)
 						active1 = R
 				if (!( active1 ))
 					temp = text("Could not locate record [].", t1)
@@ -481,7 +481,7 @@ What a mess.*/
 							active2.fields["ma_crim_d"] = t1
 					if("notes")
 						if (istype(active2, /datum/data/record))
-							var/t1 = sanitize(input("Please summarize notes:", "Secure. records", html_decode(active2.fields["notes"]), null)  as message, extra = 0, max_length = MAX_RECORD_LENGTH)
+							var/t1 = sanitize(input("Please summarize notes:", "Secure. records", rhtml_decode(active2.fields["notes"]), null)  as message, extra = 0, max_length = MAX_RECORD_LENGTH)
 							if (!t1 || active2 != a2)
 								return
 							active2.fields["notes"] = t1

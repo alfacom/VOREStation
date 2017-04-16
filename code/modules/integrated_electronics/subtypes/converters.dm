@@ -71,7 +71,7 @@
 	var/datum/integrated_io/incoming = inputs[1]
 	var/datum/integrated_io/outgoing = outputs[1]
 	if(incoming.data && istext(incoming.data))
-		result = lowertext(incoming.data)
+		result = rlowertext(incoming.data)
 
 	outgoing.data = result
 	outgoing.push_data()
@@ -87,7 +87,7 @@
 	var/datum/integrated_io/incoming = inputs[1]
 	var/datum/integrated_io/outgoing = outputs[1]
 	if(incoming.data && istext(incoming.data))
-		result = uppertext(incoming.data)
+		result = ruppertext(incoming.data)
 
 	outgoing.data = result
 	outgoing.push_data()

@@ -203,7 +203,7 @@
 
 /obj/structure/frame/update_icon()
 	..()
-	var/type = lowertext(frame_type.name)
+	var/type = rlowertext(frame_type.name)
 	type = replacetext(type, " ", "_")
 	icon_state = "[type]_[state]"
 
